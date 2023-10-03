@@ -14,10 +14,3 @@ export const App = () => {
     </div>
   );
 };
-
-// eslint-disable-next-line
-{
-  /* <BrowserRouter basename="/goit-react-hw-05-movies">
-  <App />
-</BrowserRouter>; */
-}
