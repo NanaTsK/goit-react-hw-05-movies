@@ -5,6 +5,7 @@ import { SharedLayout } from '../pages/SharedLayout/SharedLayout';
 // import About from 'path/to/pages/About';
 // import Products from 'path/to/pages/Products';
 // import { NotFoundPage } from '../pages/NotFoundPage/NotFoundPage';
+// import { NotFoundPage } from '../pages/NotFoundPage/NotFoundPage';
 
 export const App = () => {
   return (
