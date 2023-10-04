@@ -6,18 +6,12 @@ export const FooterStyled = styled('footer')({
   left: 0,
   right: 0,
 
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-
-  //   minHeight: '100px',
-  background: 'teal',
-
-  boxShadow: '0 -4px 8px 2px #0a0a0a',
+  background: 'rgba(0, 128, 128, 0.6)',
+  //   boxShadow: '0 -4px 8px 2px #0a0a0a',
+  boxShadow: '0px -4px 10px 2px rgba(0, 0, 0, 0.5)',
 
   '&>div': {
     display: 'flex',
-    //   display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
