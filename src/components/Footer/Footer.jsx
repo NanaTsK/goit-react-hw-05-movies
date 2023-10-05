@@ -1,14 +1,14 @@
-// import Logo from 'components/Logo';
-// import { FooterStyled } from './Footer.styled';
-import { FooterStyled } from './Footer.styled';
 import { Container } from 'components/App.styled';
+import { Link } from 'react-router-dom';
+import { FooterStyled, LogoText } from './Footer.styled';
 
 export const Footer = () => {
   return (
     <FooterStyled>
       <Container>
-        {/* <Logo /> */}
-        <button>FOOTER LOGO</button>
+        <Link to="/">
+          <LogoText>PopcornSearch</LogoText>
+        </Link>
       </Container>
     </FooterStyled>
   );
