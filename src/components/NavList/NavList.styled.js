@@ -15,7 +15,7 @@ export const NavLinkStyled = styled(NavLink)({
   fontSize: '22px',
   fontWeight: '600',
   letterSpacing: '0.6px',
-  textTransform: 'uppercase',
+  // textTransform: 'uppercase',
   color: '#f1f1f1',
   padding: '14px 12px',
 
