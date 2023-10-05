@@ -25,7 +25,7 @@ export const NavLinkStyled = styled(NavLink)({
   transition: `borderColor ${transition}, transform ${transition}`,
 
   '&:hover, &:focus': {
-    transform: 'scale(1.1)',
+    transform: 'scale(1.05)',
     boxShadow: '0px 0px 2px 1px rgba(0, 0, 0, 0.2)',
   },
   '&.active': {
