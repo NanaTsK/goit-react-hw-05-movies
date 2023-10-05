@@ -1,47 +1,47 @@
 import { Section } from 'components/App.styled';
-// import { TrendingMovies } from 'components/TrendingMovies/TrendingMovies';
+import { ErrorMessage } from 'components/App.styled';
+import { Loader } from 'components/Loader/Loader';
+import { TrendingMovies } from 'components/TrendingMovies/TrendingMovies';
+import { useEffect, useState } from 'react';
+import { getTrendingMovies } from 'services/movies-api';
 
-// import { ErrorMessage } from 'components/App.styled';
-// import { Loader } from 'components/Loader/Loader';
-// import { useEffect, useState } from 'react';
-// import getPopularMovies
+const HomePage = () => {
+  const [movies, setMovies] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-export const HomePage = () => {
-  // const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    if (movies) return;
+    const fetchMovies = async () => {
+      try {
+        setIsError(false);
+        setIsLoading(true);
+        const { results } = await getTrendingMovies();
+        setMovies(results);
+      } catch ({ message }) {
+        setIsError(message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchMovies();
+  }, [movies]);
 
   return (
     <main>
       <Section>
-        {/* {<button>HOME PAGE</button>} */}
-        {/* {movies && <TrendingMovies movies={movies} />} */}
-        {/* {isError && <ErrorMessage error={isError} />} */}
-        {/* {isLoading && <Loader />} */}
+        {movies && <TrendingMovies movies={movies} />}
+
+        {isError && !isLoading && (
+          <ErrorMessage>
+            Oops... Something went wrong. Please, try again.
+          </ErrorMessage>
+        )}
+
+        {isLoading && <Loader />}
       </Section>
     </main>
   );
 };
 
-//*====================
-
-// import { Section } from 'components/App.styled';
-// import { TrendingMovies } from 'components/TrendingMovies/TrendingMovies';
-
-// // import { ErrorMessage } from 'components/App.styled';
-// // import { Loader } from 'components/Loader/Loader';
-// // import { useEffect, useState } from 'react';
-// // import getPopularMovies
-
-// export const HomePage = () => {
-//   // const [isLoading, setIsLoading] = useState(false);
-
-//   return (
-//     <main>
-//       <Section>
-//         {/* {<button>HOME PAGE</button>} */}
-//         {/* {movies && <TrendingMovies movies={movies} />} */}
-//         {/* {isError && <ErrorMessage error={isError} />} */}
-//         {/* {isLoading && <Loader />} */}
-//       </Section>
-//     </main>
-//   );
-// };
+export default HomePage;

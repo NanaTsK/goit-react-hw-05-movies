@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-// import { lazy } from 'react';
+import { lazy } from 'react';
 import { SharedLayout } from '../pages/SharedLayout/SharedLayout';
 
-import { HomePage } from '../pages/HomePage/HomePage'; // Import the HomePage component
+// import { HomePage } from '../pages/HomePage/HomePage'; // Import the HomePage component
 import { MoviesPage } from '../pages/MoviesPage/MoviesPage'; // Import the MoviesPage component
 
-// const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 // const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
 
 // const Cast = lazy(() => import(''));
