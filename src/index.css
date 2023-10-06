@@ -109,11 +109,7 @@ h2 {
   color: rgb(20, 231, 160);
   color: rgb(243, 243, 116);
   color: rgb(239, 128, 128);
-  color: whitesmoke;
-    color: rgb(245, 245, 245);
       
-    background: rgb(0, 128, 128);
-
 backgroundColor: rgba(38, 192, 211, 0.8)
 background-color: rgba(104, 133, 176, 0.8);
 
@@ -123,6 +119,11 @@ background-color: rgba(104, 133, 176, 0.8);
   color: rgba(5, 5, 5, 0.3);
   color: rgba(255, 255, 255, 0.5);
   color: rgb(241, 241, 241);
+  background: teal;
+  background: rgb(0, 128, 128);
+
+  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
 }
 
 /* borderBottom: 2px solid rgba(255, 255, 255, 0.5); */
