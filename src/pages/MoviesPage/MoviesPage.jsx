@@ -1,9 +1,8 @@
 import {
   Suspense,
-  lazy,
+  // lazy,
   useCallback,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -14,7 +13,9 @@ import { SearchForm } from 'components/SearchForm/SearchForm';
 import { Section, Container } from 'components/App.styled';
 import { ErrorMessage } from 'components/App.styled';
 
-const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
+import { MoviesList } from 'components/MoviesList/MoviesList';
+
+// const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
 
 export const MoviesPage = () => {
   const [searchedMovies, setSearchedMovies] = useState('');
@@ -23,10 +24,9 @@ export const MoviesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState('');
   const [searchParams] = useSearchParams();
+  const [query, setQuery] = useState('');
 
-  const query = useMemo(() => searchParams.get('query') ?? '', [searchParams]);
-
-  const refMovie = useRef(query);
+  const refMovie = useRef(searchParams.get('query') ?? '');
 
   const fetchMovies = useCallback(async (searchedMovies, page) => {
     try {
@@ -53,6 +53,12 @@ export const MoviesPage = () => {
     searchedMovies && fetchMovies(searchedMovies, page);
   }, [fetchMovies, searchedMovies, page]);
 
+  // const onSubmit = value => {
+  //   if (value === query) return;
+  //   setMovies(null);
+  //   setSearchedMovies(value);
+  //   setPage(1);
+  // };
   function onSubmit(value) {
     if (value === searchedMovies) return;
     setMovies(null);
@@ -64,7 +70,7 @@ export const MoviesPage = () => {
     <main>
       <Section>
         <Container>
-          <SearchForm setSearchedMovies={onSubmit} />
+          <SearchForm onSubmit={onSubmit} query={query} setQuery={setQuery} />
           {isLoading && <Loader />}
 
           <Suspense fallback={<Loader />}>
@@ -80,6 +86,90 @@ export const MoviesPage = () => {
     </main>
   );
 };
+//*===========================
+// import {
+//   Suspense,
+//   lazy,
+//   useCallback,
+//   useEffect,
+//   useMemo,
+//   useRef,
+//   useState,
+// } from 'react';
+// import { useSearchParams } from 'react-router-dom';
+// import { getMoviesBySearch } from 'services/movies-api';
+// import { Loader } from 'components/Loader/Loader';
+// import { SearchForm } from 'components/SearchForm/SearchForm';
+// import { Section, Container } from 'components/App.styled';
+// import { ErrorMessage } from 'components/App.styled';
+
+// const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
+
+// export const MoviesPage = () => {
+//   const [searchedMovies, setSearchedMovies] = useState('');
+//   const [movies, setMovies] = useState(null);
+//   const [page, setPage] = useState(1);
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [isError, setIsError] = useState('');
+//   const [searchParams] = useSearchParams();
+
+//   const query = useMemo(() => searchParams.get('query') ?? '', [searchParams]);
+
+//   const refMovie = useRef(query);
+
+//   const fetchMovies = useCallback(async (searchedMovies, page) => {
+//     try {
+//       setIsError('');
+//       setIsLoading(true);
+
+//       const { results } = await getMoviesBySearch(searchedMovies, page);
+
+//       setMovies(prevMovies =>
+//         page === 1 ? results : [...prevMovies, ...results]
+//       );
+//     } catch (message) {
+//       setIsError(message);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   }, []);
+
+//   useEffect(() => {
+//     refMovie.current && fetchMovies(refMovie.current, page);
+//   }, [fetchMovies, page]);
+
+//   useEffect(() => {
+//     searchedMovies && fetchMovies(searchedMovies, page);
+//   }, [fetchMovies, searchedMovies, page]);
+
+//   function onSubmit(value) {
+//     if (value === searchedMovies) return;
+//     setMovies(null);
+//     setSearchedMovies(value);
+//     setPage(1);
+//   }
+
+//   return (
+//     <main>
+//       <Section>
+//         <Container>
+//           {/* <SearchForm setSearchedMovies={onSubmit} /> */}
+//           <SearchForm setSearchedMovies={onSubmit} query={searchedMovies} />
+//           {isLoading && <Loader />}
+
+//           <Suspense fallback={<Loader />}>
+//             {isError && !isLoading && (
+//               <ErrorMessage>
+//                 Oops... Something went wrong. Please, try again.
+//               </ErrorMessage>
+//             )}
+//             {movies && <MoviesList moviesList={movies} />}
+//           </Suspense>
+//         </Container>
+//       </Section>
+//     </main>
+//   );
+// };
 
 //* ========================
 
