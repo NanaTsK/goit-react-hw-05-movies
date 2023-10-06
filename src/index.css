@@ -93,6 +93,12 @@ button {
   visibility: hidden;
 }
 
+/* .sticky-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+} */
 /* h1,
 h2 {
   text-shadow: 1px 3px 0 #505050, -1px 3px 0 #505050;

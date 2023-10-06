@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
 
 export const FooterStyled = styled('footer')({
-  position: 'relative',
-  top: '100%',
+  position: 'fixed',
+  // top: '100%',
   bottom: 0,
   left: 0,
   right: 0,
@@ -18,6 +18,15 @@ export const FooterStyled = styled('footer')({
     alignItems: 'center',
   },
 });
+// export const FooterStyled = styled('footer')({
+//   display: 'flex',
+//   justifyContent: 'center',
+//   alignItems: 'center',
+
+//   minHeight: '100vhv',
+//   background: '#1f1f1f1f',
+//   boxShadow: '0 -4px 8px 2px #0a0a0a',
+// });
 
 export const LogoText = styled('p')({
   fontSize: '26px',

@@ -15,7 +15,7 @@ export const Heading = styled('h1')({
   color: '#f1f1f1',
 });
 export const Section = styled('section')({
-  padding: '110px 0 40px',
+  padding: '110px 0 80px',
 });
 
 export const ErrorMessage = styled('p')({
@@ -37,3 +37,10 @@ export const notifyInit = Notify.init({
   notiflixIconColor: 'rgba(0,0,0,0.6)',
   pauseOnHover: true,
 });
+
+// .sticky-footer {
+//   display: 'flex',
+//   flexDirection: 'column',
+//   justifyContent: 'flex-end',
+//   minHeight: 100vh,
+// }
