@@ -6,18 +6,18 @@ import {
   SearchFormInput,
 } from './SearchForm.styled';
 import { AiOutlineSearch } from 'react-icons/ai';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Notify } from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Notify } from 'notiflix';
 import { notifyInit } from 'components/App.styled';
 
-export const SearchForm = ({ setMovieSearch }) => {
+export const SearchForm = ({ setSearchedMovies }) => {
   const [search, setSearch] = useSearchParams();
   const query = search.get('query') ?? '';
 
   //   const handleSubmit = e => {
   //     e.preventDefault();
   //     setSearch({ query: query.trim() });
-  //     setMovieSearch(query);
+  //     setSearchedMovies(query);
   //   };
 
   const handleSubmit = e => {
@@ -28,7 +28,7 @@ export const SearchForm = ({ setMovieSearch }) => {
       return;
     }
     setSearch({ query: query.trim() });
-    setMovieSearch(query);
+    setSearchedMovies(query);
   };
 
   const handleChange = ({ target: { value } }) => {

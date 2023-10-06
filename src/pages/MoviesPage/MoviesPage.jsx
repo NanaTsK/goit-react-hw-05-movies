@@ -1,3 +1,15 @@
+// import { getMoviesBySearch } from 'services/movies-api';
+// import { SearchForm } from 'components/SearchForm/SearchForm';
+// import { MoviesList } from 'components/MoviesList/MoviesList';
+// import { Notify } from 'notiflix';
+// import React, { useCallback, useEffect, useRef, useState } from 'react';
+// import { useSearchParams } from 'react-router-dom';
+// import { Section, Container } from 'components/App.styled';
+// import { Loader } from 'components/Loader/Loader';
+// import { ErrorMessage } from 'components/App.styled';
+
+//* ========================
+
 import {
   Suspense,
   lazy,
@@ -79,13 +91,6 @@ export const MoviesPage = () => {
 
   return (
     <main>
-      {/* <Section> */}
-      {/* {<button>MOVIES PAGE</button>} */}
-      {/* {movies && <TrendingMovies movies={movies} />} */}
-      {/* {isError && <ErrorMessage error={isError} />} */}
-      {/* {isLoading && <Loader />} */}
-      {/* </Section> */}
-
       <Section>
         <Container>
           <SearchForm setSearchedMovies={onSubmit} />
