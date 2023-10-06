@@ -11,11 +11,11 @@ export const Heading = styled('h1')({
   textAlign: 'center',
   textTransform: 'uppercase',
   letterSpacing: '0.8px',
-  marginBottom: '40px',
+  marginBottom: '30px',
   color: '#f1f1f1',
 });
 export const Section = styled('section')({
-  padding: '40px 0',
+  padding: '110px 0 40px',
 });
 
 export const ErrorMessage = styled('p')({
