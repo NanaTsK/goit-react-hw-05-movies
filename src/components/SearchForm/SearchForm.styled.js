@@ -6,6 +6,7 @@ export const SearchFormStyled = styled('form')({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  marginBottom: '40px',
 });
 
 export const SearchFormWrap = styled('div')({
