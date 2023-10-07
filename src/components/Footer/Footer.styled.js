@@ -12,7 +12,6 @@ export const FooterStyled = styled('footer')({
   justifyContent: 'center',
   alignItems: 'center',
 
-  minHeight: '100vhv',
   background: 'rgba(0, 128, 128, 0.6)',
   boxShadow: '0px -4px 10px 2px rgba(0, 0, 0, 0.5)',
 });
