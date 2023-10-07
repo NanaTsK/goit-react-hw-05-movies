@@ -1,4 +1,4 @@
-// import { ButtonUp } from 'components/ButtonUp';
+// import { ButtonUp } from 'xxx';
 import { Header } from 'components/Header/Header';
 import { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
