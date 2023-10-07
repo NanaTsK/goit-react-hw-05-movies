@@ -1,5 +1,5 @@
 import { Container, Heading } from 'components/App.styled';
-import { MoviesList } from 'components/MoviesList/MoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
 
 export function TrendingMovies({ movies }) {
   return (

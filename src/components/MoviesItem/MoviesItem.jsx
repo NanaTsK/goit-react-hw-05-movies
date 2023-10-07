@@ -2,7 +2,7 @@ import { useLocation, Link } from 'react-router-dom';
 import defaultImg from 'images/defImg.jpg';
 import { MoviesItemStyled, TitleWrap, MovieTitle } from './MoviesItem.styled';
 
-export const MoviesItem = ({ movie }) => {
+const MoviesItem = ({ movie }) => {
   const location = useLocation();
 
   function shortenTitle(title) {
@@ -27,3 +27,4 @@ export const MoviesItem = ({ movie }) => {
     </MoviesItemStyled>
   );
 };
+export default MoviesItem;

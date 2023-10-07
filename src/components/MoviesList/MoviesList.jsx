@@ -1,7 +1,7 @@
-import { MoviesItem } from 'components/MoviesItem/MoviesItem';
+import MoviesItem from 'components/MoviesItem/MoviesItem';
 import { MoviesListStyled } from './MoviesList.styled';
 
-export const MoviesList = ({ moviesList }) => {
+const MoviesList = ({ moviesList }) => {
   return (
     <MoviesListStyled>
       {moviesList.map(movie => (
@@ -10,3 +10,5 @@ export const MoviesList = ({ moviesList }) => {
     </MoviesListStyled>
   );
 };
+
+export default MoviesList;

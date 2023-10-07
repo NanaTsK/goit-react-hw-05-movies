@@ -1,6 +1,6 @@
 import {
   Suspense,
-  // lazy,
+  lazy,
   useCallback,
   useEffect,
   useRef,
@@ -12,16 +12,14 @@ import { Loader } from 'components/Loader/Loader';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { Section, Container } from 'components/App.styled';
 import { ErrorMessage } from 'components/App.styled';
-// import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
-
-import { MoviesList } from 'components/MoviesList/MoviesList';
-
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyInit } from 'components/App.styled';
 
-// const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
+// import { MoviesList } from 'components/MoviesList/MoviesList';
 
-export const MoviesPage = () => {
+const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
+
+const MoviesPage = () => {
   const [searchedMovies, setSearchedMovies] = useState('');
   const [movies, setMovies] = useState(null);
   const [page, setPage] = useState(1);
@@ -91,3 +89,5 @@ export const MoviesPage = () => {
     </main>
   );
 };
+
+export default MoviesPage;
