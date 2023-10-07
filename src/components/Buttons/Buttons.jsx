@@ -1,24 +1,7 @@
-import { LoadMoreBtnStyled, MovieLink } from './Buttons.styled';
+import { MovieLink } from './Buttons.styled';
 
 import { BiArrowBack } from 'react-icons/bi';
 import { useLocation } from 'react-router-dom';
-
-// export const Button = ({ handleLoadMore }) => {
-//   return <LoadMoreBtn onClick={handleLoadMore}>Load more</LoadMoreBtn>;
-// };
-
-export const LoadMoreBtn = ({ handleLoadMore }) => {
-  return (
-    <LoadMoreBtnStyled
-      onClick={e => {
-        e.currentTarget.blur();
-        handleLoadMore();
-      }}
-    >
-      Load More
-    </LoadMoreBtnStyled>
-  );
-};
 
 export const GoBackBtn = () => {
   const location = useLocation();
