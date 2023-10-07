@@ -15,8 +15,6 @@ import { ErrorMessage } from 'components/App.styled';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyInit } from 'components/App.styled';
 
-// import { MoviesList } from 'components/MoviesList/MoviesList';
-
 const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
 
 const MoviesPage = () => {
