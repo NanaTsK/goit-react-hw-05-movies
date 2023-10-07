@@ -8,10 +8,11 @@ import {
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyInit } from 'components/App.styled';
 import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 
 export const SearchForm = ({ onSubmit }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') || '';
+  const [query, setQuery] = useState(searchParams.get('query') ?? '');
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -22,10 +23,15 @@ export const SearchForm = ({ onSubmit }) => {
     }
 
     setSearchParams({ query: query.trim() });
+
+    setQuery('');
+    // setSearchParams({}); //* If URL to be cleared
+
     onSubmit(query);
   };
 
   const handleChange = ({ target: { value } }) => {
+    setQuery(value);
     setSearchParams({ query: value.trim() });
   };
 
