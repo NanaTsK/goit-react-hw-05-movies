@@ -37,10 +37,3 @@ export const notifyInit = Notify.init({
   notiflixIconColor: 'rgba(0,0,0,0.6)',
   pauseOnHover: true,
 });
-
-// .sticky-footer {
-//   display: 'flex',
-//   flexDirection: 'column',
-//   justifyContent: 'flex-end',
-//   minHeight: 100vh,
-// }
