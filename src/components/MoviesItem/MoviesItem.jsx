@@ -1,5 +1,5 @@
 import { useLocation, Link } from 'react-router-dom';
-import defaultImg from 'images/defaultImg.jpg';
+import defaultImg from 'images/defImg.jpg';
 import { MoviesItemStyled, TitleWrap, MovieTitle } from './MoviesItem.styled';
 
 export const MoviesItem = ({ movie }) => {
