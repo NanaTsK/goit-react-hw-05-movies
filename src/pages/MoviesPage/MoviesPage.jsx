@@ -12,8 +12,12 @@ import { Loader } from 'components/Loader/Loader';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { Section, Container } from 'components/App.styled';
 import { ErrorMessage } from 'components/App.styled';
+// import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 
 import { MoviesList } from 'components/MoviesList/MoviesList';
+
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { notifyInit } from 'components/App.styled';
 
 // const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
 
@@ -38,6 +42,12 @@ export const MoviesPage = () => {
       setMovies(prevMovies =>
         page === 1 ? results : [...prevMovies, ...results]
       );
+      if (results.length === 0) {
+        Notify.warning(
+          'Sorry, there are no movies matching your search query. Please try again.',
+          notifyInit
+        );
+      }
     } catch (message) {
       setIsError(message);
     } finally {
@@ -79,6 +89,14 @@ export const MoviesPage = () => {
                 Oops... Something went wrong. Please, try again.
               </ErrorMessage>
             )}
+
+            {/* {movies && movies.length === 0 && !isLoading && (
+              <NotFoundPage>
+                Sorry, there are no movies matching your search query. Please
+                try again.
+              </NotFoundPage>
+            )} */}
+
             {movies && <MoviesList moviesList={movies} />}
           </Suspense>
         </Container>

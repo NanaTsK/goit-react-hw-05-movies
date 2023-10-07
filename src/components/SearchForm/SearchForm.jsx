@@ -1,15 +1,18 @@
+import { AiOutlineSearch } from 'react-icons/ai';
 import {
   SearchFormStyled,
   SearchFormWrap,
   SearchFormBtn,
   SearchFormInput,
 } from './SearchForm.styled';
-import { AiOutlineSearch } from 'react-icons/ai';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-// import { Notify } from 'notiflix';
 import { notifyInit } from 'components/App.styled';
+import { useSearchParams } from 'react-router-dom';
 
-export const SearchForm = ({ onSubmit, query, setQuery }) => {
+export const SearchForm = ({ onSubmit }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query') || '';
+
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -18,11 +21,12 @@ export const SearchForm = ({ onSubmit, query, setQuery }) => {
       return;
     }
 
+    setSearchParams({ query: query.trim() }); // Update query parameter in the URL
     onSubmit(query);
   };
 
   const handleChange = ({ target: { value } }) => {
-    setQuery(value);
+    setSearchParams({ query: value.trim() }); // Update query parameter in the URL
   };
 
   return (
@@ -44,6 +48,67 @@ export const SearchForm = ({ onSubmit, query, setQuery }) => {
     </SearchFormStyled>
   );
 };
+//* ?????????????
+// import { useSearchParams } from 'react-router-dom';
+// import { AiOutlineSearch } from 'react-icons/ai';
+
+// import {
+//   SearchFormStyled,
+//   SearchFormWrap,
+//   SearchFormBtn,
+//   SearchFormInput,
+// } from './SearchForm.styled';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// // import { Notify } from 'notiflix';
+// import { notifyInit } from 'components/App.styled';
+
+// export const SearchForm = ({ onSubmit }) => {
+//   const [search, setSearch] = useSearchParams();
+//   const query = search.get('query') || '';
+
+//   const handleSubmit = e => {
+//     e.preventDefault();
+
+//     if (query.trim() === '') {
+//       Notify.info('Please, enter your request', notifyInit);
+//       return;
+//     }
+
+//     setSearch({ query: query.trim() });
+//     onSubmit(query);
+//   };
+
+//   const handleChange = ({ target: { value } }) => {
+//     setSearch({ query: query.trim() });
+//   };
+//   // export const SearchForm = () => {
+//   //   const [search, setSearch] = useSearchParams();
+//   //   const query = search.get('query') || '';
+
+//   //   const handleChange = e => {
+//   //     const newValue = e.target.value;
+//   //     setSearch('query', newValue);
+//   //   };
+
+//   return (
+//     <SearchFormStyled onSubmit={handleSubmit}>
+//       <SearchFormWrap>
+//         <SearchFormBtn type="submit">
+//           <AiOutlineSearch />
+//         </SearchFormBtn>
+//         <SearchFormInput
+//           type="text"
+//           name="searchQuery"
+//           autoComplete="off"
+//           autoFocus
+//           placeholder="Search movies"
+//           onChange={handleChange}
+//           value={query}
+//         />
+//       </SearchFormWrap>
+//     </SearchFormStyled>
+//   );
+// };
 //* =============
 // // import { useSearchParams } from 'react-router-dom';
 // import {
