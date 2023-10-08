@@ -1,19 +1,20 @@
 import { MovieLink } from './Buttons.styled';
-
-import { BiArrowBack } from 'react-icons/bi';
 import { useLocation } from 'react-router-dom';
+import { TbArrowBack } from 'react-icons/tb';
 
-export const GoBackBtn = () => {
+const GoBackBtn = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
   return (
     <MovieLink to={backLinkHref}>
-      <BiArrowBack />
+      <TbArrowBack />
       <span>Go back</span>
     </MovieLink>
   );
 };
+
+export default GoBackBtn;
 
 // const backLinkRef = useRef(location.state?.from ?? '/movies');
 

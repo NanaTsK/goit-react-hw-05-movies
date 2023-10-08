@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const MovieLink = styled(Link)({
-  position: 'fixed',
-  top: '100px',
-  left: '5px',
+  // position: 'fixed',
+  // top: '100px',
+  // left: '5px',
   display: 'flex',
   alignItems: 'center',
   gap: '10px',
@@ -22,3 +22,18 @@ export const MovieLink = styled(Link)({
     color: '#f1f1f1',
   },
 });
+
+// export const BtnGoBack = styled.button`
+// background-color: transparent;
+// border:transparent;
+// margin-bottom:10px;
+// margin-left:10px;
+
+// &:hover {
+//     color: #ff7f7f;
+// }
+
+// export const BackButton = styled(SearchButton)`
+//   height: 40px;
+//   margin-bottom: 40px;
+// `;
