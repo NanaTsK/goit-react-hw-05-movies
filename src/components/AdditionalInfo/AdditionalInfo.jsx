@@ -2,7 +2,7 @@ import { Container } from 'components/App.styled';
 import {
   AdditionalInfoWrap,
   AdditionalNavBox,
-  //   AdditionalNavLink,
+  AdditionalNavLink,
   AdditionalTitle,
 } from './AdditionalInfo.styled';
 
@@ -12,7 +12,7 @@ const AdditionalInfo = () => {
       <Container>
         <AdditionalTitle>Additional information</AdditionalTitle>
         <AdditionalNavBox>
-          <button
+          {/* <button
             style={{
               display: 'flex',
               fontSize: 22,
@@ -29,10 +29,10 @@ const AdditionalInfo = () => {
             }}
           >
             REVIEWS
-          </button>
+          </button> */}
 
-          {/* <AdditionalNavLink to="cast">Cast</AdditionalNavLink>
-          <AdditionalNavLink to="reviews">Reviews</AdditionalNavLink> */}
+          <AdditionalNavLink to="cast">Cast</AdditionalNavLink>
+          <AdditionalNavLink to="reviews">Reviews</AdditionalNavLink>
         </AdditionalNavBox>
       </Container>
     </AdditionalInfoWrap>

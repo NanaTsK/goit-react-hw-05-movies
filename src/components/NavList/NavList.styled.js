@@ -15,14 +15,13 @@ export const NavLinkStyled = styled(NavLink)({
   fontSize: '22px',
   fontWeight: '600',
   letterSpacing: '0.6px',
-  // textTransform: 'uppercase',
   color: '#f1f1f1',
   padding: '14px 12px',
 
   background: 'transparent',
   borderRadius: '8px',
 
-  transition: `borderColor ${transition}, transform ${transition}`,
+  transition: `transform ${transition}`,
 
   '&:hover, &:focus': {
     transform: 'scale(1.05)',
