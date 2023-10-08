@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ErrorMessage } from 'components/App.styled';
-
+import { Section, ErrorMessage } from 'components/App.styled';
 import { Outlet, useParams } from 'react-router-dom';
-
 import { getMovieByID } from 'services/movies-api';
-import { Section } from 'components/App.styled';
 import { Loader } from 'components/Loader/Loader';
 
 import MovieDetailsSection from 'components/MovieDetailsSection/MovieDetailsSection';

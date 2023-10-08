@@ -18,7 +18,7 @@ export const SearchFormWrap = styled('div')({
   maxWidth: '600px',
   backgroundColor: 'rgba(245, 245, 245, 0.7)',
 
-  borderRadius: '3px',
+  borderRadius: '8px',
   overflow: 'hidden',
 });
 

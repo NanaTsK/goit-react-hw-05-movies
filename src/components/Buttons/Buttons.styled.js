@@ -1,39 +1,34 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const MovieLink = styled(Link)({
-  // position: 'fixed',
-  // top: '100px',
-  // left: '5px',
+const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
+
+export const GoBackContainer = styled.div`
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  margin-bottom: 40px;
+`;
+
+export const GoBackLink = styled(Link)({
   display: 'flex',
   alignItems: 'center',
-  gap: '10px',
-  fontWeight: '500',
-  fontSize: '20px',
-  padding: '5px',
-  borderRadius: '8px',
-  background: '#0f0f0ff1',
-  color: '#aeaeae',
-  transition:
-    'color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  justifyContent: 'center',
+  gap: '8px',
 
-  '&:hover': {
-    transform: 'scale(1.1)',
-    color: '#f1f1f1',
+  width: '80%',
+  maxWidth: '600px',
+  height: '48px',
+  fontSize: '24px',
+  color: 'rgba(5, 5, 5, 0.6)',
+
+  background: 'transparent',
+  borderRadius: '8px',
+  boxShadow: '0px 0px 2px 1px rgba(0, 0, 0, 0.2)',
+
+  transition: `boxShadow ${transition}, transform ${transition}`,
+
+  '&:hover, &:focus': {
+    transform: 'scale(1.05)',
+    boxShadow: '0px 0px 2px 1px rgba(0, 0, 0, 0.4)',
   },
 });
-
-// export const BtnGoBack = styled.button`
-// background-color: transparent;
-// border:transparent;
-// margin-bottom:10px;
-// margin-left:10px;
-
-// &:hover {
-//     color: #ff7f7f;
-// }
-
-// export const BackButton = styled(SearchButton)`
-//   height: 40px;
-//   margin-bottom: 40px;
-// `;

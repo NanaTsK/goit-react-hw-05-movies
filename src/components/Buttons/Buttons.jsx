@@ -1,4 +1,4 @@
-import { MovieLink } from './Buttons.styled';
+import { GoBackContainer, GoBackLink } from './Buttons.styled';
 import { useLocation } from 'react-router-dom';
 import { TbArrowBack } from 'react-icons/tb';
 
@@ -7,21 +7,13 @@ const GoBackBtn = () => {
   const backLinkHref = location.state?.from ?? '/';
 
   return (
-    <MovieLink to={backLinkHref}>
-      <TbArrowBack />
-      <span>Go back</span>
-    </MovieLink>
+    <GoBackContainer>
+      <GoBackLink to={backLinkHref}>
+        <TbArrowBack />
+        <span>Go back</span>
+      </GoBackLink>
+    </GoBackContainer>
   );
 };
 
 export default GoBackBtn;
-
-// const backLinkRef = useRef(location.state?.from ?? '/movies');
-
-// const handleBackToList = () => {
-//   navigate(backLinkRef.current);
-// };
-// <BackButton onClick={handleBackToList}>
-//   <span>◀</span>
-//   <span>Go back</span>
-// </BackButton>;
