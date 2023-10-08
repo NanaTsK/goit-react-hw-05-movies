@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
+
 export const AdditionalInfoWrap = styled('div')({
   //   paddingTop: '20px',
   color: '#f1f1f1',
@@ -12,7 +14,7 @@ export const AdditionalInfoWrap = styled('div')({
 
 export const AdditionalTitle = styled('h3')({
   fontSize: '26px',
-  marginBottom: '28px',
+  marginBottom: '20px',
 });
 
 export const AdditionalNavBox = styled('div')({
@@ -25,19 +27,33 @@ export const AdditionalNavLink = styled(NavLink)({
   fontSize: '18px',
   fontWeight: '600',
   letterSpacing: '0.6px',
-  textTransform: 'uppercase',
+  //   textTransform: 'uppercase',
   color: '#f1f1f1',
   padding: '10px 12px',
-  transition:
-    'transform 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  //   transition:
+  //     'transform 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1)',
 
-  '&.active': {
-    background: 'rgba(255,0,0, 0.8)',
-    borderRadius: '8px',
-    color: '#1f1f1f',
+  //   '&.active': {
+  //     background: 'rgba(255,0,0, 0.8)',
+  //     borderRadius: '8px',
+  //     color: '#1f1f1f',
+  //   },
+
+  //   '&.active, &:is(:hover, :focus)': {
+  //     transform: 'scale(1.1)',
+  //   },
+
+  background: 'transparent',
+  borderRadius: '8px',
+
+  transition: `borderColor ${transition}, transform ${transition}`,
+
+  '&:hover, &:focus': {
+    transform: 'scale(1.05)',
+    boxShadow: '0px 0px 2px 1px rgba(0, 0, 0, 0.2)',
   },
-
-  '&.active, &:is(:hover, :focus)': {
-    transform: 'scale(1.1)',
+  '&.active': {
+    transform: 'none',
+    boxShadow: '0px 0px 2px 1px rgba(0, 0, 0, 0.4)',
   },
 });
