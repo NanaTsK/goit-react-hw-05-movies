@@ -141,3 +141,13 @@ background-color: rgba(104, 133, 176, 0.8);
 }
 
 /* borderBottom: 2px solid rgba(255, 255, 255, 0.5); */
+/* 
+          <button
+            style={{
+              display: 'flex',
+              fontSize: 22,
+              color: '#010101',
+            }}
+          >
+            CAST
+          </button> */

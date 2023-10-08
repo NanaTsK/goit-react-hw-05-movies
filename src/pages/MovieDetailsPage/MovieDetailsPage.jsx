@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import { Section, ErrorMessage } from 'components/App.styled';
 import { Outlet, useParams } from 'react-router-dom';
 import { getMovieByID } from 'services/movies-api';
 import { Loader } from 'components/Loader/Loader';
 
 import MovieDetailsSection from 'components/MovieDetailsSection/MovieDetailsSection';
-import AdditionalInfo from 'components/AdditionalInfo/AdditionalInfo';
+const AdditionalInfo = lazy(() =>
+  import('components/AdditionalInfo/AdditionalInfo')
+);
 // import ErrorMessage from 'components/ErrorMessage';
 
 const MovieDetailsPage = () => {
@@ -42,9 +44,14 @@ const MovieDetailsPage = () => {
       {isLoading && <Loader />}
       {detailsMovie && <MovieDetailsSection details={detailsMovie} />}
       <Section>
-        <AdditionalInfo />
-        <Outlet />
+        {detailsMovie ? (
+          <Suspense fallback={<Loader />}>
+            <AdditionalInfo />
+          </Suspense>
+        ) : null}
       </Section>
+
+      <Outlet />
     </main>
   );
 };
