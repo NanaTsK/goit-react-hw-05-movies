@@ -15,7 +15,7 @@ export const Heading = styled('h1')({
   color: '#f1f1f1',
 });
 export const Section = styled('section')({
-  padding: '110px 0 80px',
+  padding: '110px 0 20px',
 });
 
 export const ErrorMessage = styled('p')({

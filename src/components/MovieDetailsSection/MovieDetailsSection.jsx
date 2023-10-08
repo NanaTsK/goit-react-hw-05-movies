@@ -26,7 +26,7 @@ const MovieDetailsSection = ({ details }) => {
           <img src={imageSrc} alt={title} width={360} />
           <MovieInfoDetails>
             <MovieTitleDetail>
-              {title}({releaseData})
+              {title} ({releaseData})
             </MovieTitleDetail>
             <MovieScore>
               <SpanStyled>User Score:</SpanStyled> <span>{userScore}%</span>
