@@ -1,46 +1,59 @@
-// import { Container, Section } from 'components/App.styled';
-// import defaultImg from 'images/defImg.jpg';
-// import {
-//   DetailsWrap,
-//   MovieDescription,
-//   MovieGenres,
-//   MovieInfoDetails,
-//   MovieScore,
-//   MovieTitleDetail,
-//   SpanStyled,
-// } from './MovieDetailsSection.styled';
+import { useEffect, useState } from 'react';
+import { ErrorMessage } from 'components/App.styled';
 
-// const MovieDetailsSection = ({ details }) => {
-//   const IMAGE_URL = 'https://image.tmdb.org/t/p/w400/';
-//   const { title, release_date, overview, vote_average, poster_path, genres } =
-//     details || {};
-//   const imageSrc = poster_path ? IMAGE_URL + poster_path : defaultImg;
-//   const userScore = Math.round((Number(vote_average) * 100) / 10);
-//   const releaseData = release_date?.slice(0, 4);
-//   return (
-//     <Section>
-//       <Container>
-//         <DetailsWrap>
-//           <img src={imageSrc} alt={title} width={360} />
-//           <MovieInfoDetails>
-//             <MovieTitleDetail>
-//               {title}({releaseData})
-//             </MovieTitleDetail>
-//             <MovieScore>
-//               <SpanStyled>User Score:</SpanStyled> <span>{userScore}%</span>
-//             </MovieScore>
-//             <MovieDescription>
-//               <SpanStyled>Overview:</SpanStyled> {overview}
-//             </MovieDescription>
-//             <MovieGenres>
-//               <SpanStyled>Genres:</SpanStyled>{' '}
-//               {genres?.map(({ name }) => name).join(' / ')}
-//             </MovieGenres>
-//           </MovieInfoDetails>
-//         </DetailsWrap>
-//       </Container>
-//     </Section>
-//   );
-// };
+import { Outlet, useParams } from 'react-router-dom';
 
-// export default MovieDetailsSection;
+import { getMovieByID } from 'services/movies-api';
+import GoBackBtn from 'components/Buttons/Buttons';
+import { Section } from 'components/App.styled';
+import { Loader } from 'components/Loader/Loader';
+
+import MovieDetailsSection from 'components/MovieDetailsSection/MovieDetailsSection';
+// import AdditionalInfo from 'components/AdditionalInfo';
+// import ErrorMessage from 'components/ErrorMessage';
+
+const MovieDetailsPage = () => {
+  const { movieId } = useParams();
+  const [detailsMovie, setDetailsMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    if (detailsMovie) return;
+    const getDetails = async movieId => {
+      try {
+        setIsError(false);
+        setIsLoading(true);
+        const getMovieDetails = await getMovieByID(movieId);
+        setDetailsMovie(getMovieDetails);
+      } catch ({ message }) {
+        setIsError(message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getDetails(movieId);
+  }, [detailsMovie, movieId]);
+
+  return (
+    <main>
+      <GoBackBtn />
+      {/* {isError && <ErrorMessage error={isError} />} */}
+
+      {isError && !isLoading && (
+        <ErrorMessage>
+          Oops... Something went wrong. Please, try again.
+        </ErrorMessage>
+      )}
+
+      {isLoading && <Loader />}
+      {detailsMovie && <MovieDetailsSection details={detailsMovie} />}
+      <Section>
+        {/* <AdditionalInfo /> */}
+        <Outlet />
+      </Section>
+    </main>
+  );
+};
+
+export default MovieDetailsPage;

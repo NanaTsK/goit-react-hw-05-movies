@@ -4,12 +4,11 @@ import { SharedLayout } from '../pages/SharedLayout/SharedLayout';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('pages/MoviesPage/MoviesPage'));
-
+const MovieDetailsPage = lazy(() =>
+  import('pages/MovieDetailsPage/MovieDetailsPage')
+);
 // const Cast = lazy(() => import(''));
 // const Reviews = lazy(() => import(''));
-// const MovieDetailsPage = lazy(() =>
-//   import('pages/MovieDetailsPage/MovieDetailsPage')
-// );
 
 export const App = () => {
   return (
@@ -18,10 +17,10 @@ export const App = () => {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
-          {/* <Route path="movies/:movieId" element={<MovieDetailsPage />}> */}
-          {/* <Route path="cast" element={<Cast />} />
+          <Route path="movies/:movieId" element={<MovieDetailsPage />}>
+            {/* <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} /> */}
-          {/* </Route> */}
+          </Route>
           <Route path="/*" element={<HomePage />} />
         </Route>
       </Routes>

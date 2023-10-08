@@ -18,7 +18,7 @@ const MoviesItem = ({ movie }) => {
 
   return (
     <MoviesItemStyled title={title}>
-      <Link to={`/movie/${id.toString()}`} state={{ from: location }}>
+      <Link to={`/movies/${id.toString()}`} state={{ from: location }}>
         <img src={imageSrc} alt={title} width={200} />
         <TitleWrap>
           <MovieTitle>{shortenTitle(titleMovie)}</MovieTitle>

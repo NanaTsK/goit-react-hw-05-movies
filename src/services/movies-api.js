@@ -26,10 +26,10 @@ export const getMoviesBySearch = async (query, page = 1) => {
   return data;
 };
 
-export const getMovieByID = async movieID => {
+export const getMovieByID = async movieId => {
   const options = {
     method: 'GET',
-    url: `${BASE_URL}/movie?${movieID}&language=en-US`,
+    url: `${BASE_URL}/movie/${movieId}?language=en-US`,
     headers: HEADERS,
   };
   const { data } = await axios(options);
