@@ -4,7 +4,6 @@ import { ErrorMessage } from 'components/App.styled';
 import { Outlet, useParams } from 'react-router-dom';
 
 import { getMovieByID } from 'services/movies-api';
-import GoBackBtn from 'components/Buttons/Buttons';
 import { Section } from 'components/App.styled';
 import { Loader } from 'components/Loader/Loader';
 
@@ -37,9 +36,6 @@ const MovieDetailsPage = () => {
 
   return (
     <main>
-      <GoBackBtn />
-      {/* {isError && <ErrorMessage error={isError} />} */}
-
       {isError && !isLoading && (
         <ErrorMessage>
           Oops... Something went wrong. Please, try again.

@@ -9,6 +9,7 @@ import {
   MovieTitleDetail,
   SpanStyled,
 } from './MovieDetailsSection.styled';
+import GoBackBtn from 'components/Buttons/Buttons';
 
 const MovieDetailsSection = ({ details }) => {
   const IMAGE_URL = 'https://image.tmdb.org/t/p/w400/';
@@ -20,6 +21,7 @@ const MovieDetailsSection = ({ details }) => {
   return (
     <Section>
       <Container>
+        <GoBackBtn />
         <DetailsWrap>
           <img src={imageSrc} alt={title} width={360} />
           <MovieInfoDetails>
