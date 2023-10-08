@@ -101,6 +101,7 @@ button {
 
 .content {
   flex: 1;
+  padding-top: 100px;
 }
 
 .footer {

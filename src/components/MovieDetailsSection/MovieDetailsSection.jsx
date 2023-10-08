@@ -1,4 +1,6 @@
 import { Container, Section } from 'components/App.styled';
+// import { Container } from 'components/App.styled';
+
 import defaultImg from 'images/defImg.jpg';
 import {
   DetailsWrap,

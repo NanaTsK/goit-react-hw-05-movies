@@ -5,7 +5,7 @@ import { getMovieByID } from 'services/movies-api';
 import { Loader } from 'components/Loader/Loader';
 
 import MovieDetailsSection from 'components/MovieDetailsSection/MovieDetailsSection';
-// import AdditionalInfo from 'components/AdditionalInfo';
+import AdditionalInfo from 'components/AdditionalInfo/AdditionalInfo';
 // import ErrorMessage from 'components/ErrorMessage';
 
 const MovieDetailsPage = () => {
@@ -42,7 +42,7 @@ const MovieDetailsPage = () => {
       {isLoading && <Loader />}
       {detailsMovie && <MovieDetailsSection details={detailsMovie} />}
       <Section>
-        {/* <AdditionalInfo /> */}
+        <AdditionalInfo />
         <Outlet />
       </Section>
     </main>
