@@ -25,7 +25,7 @@ const MovieDetailsSection = ({ details }) => {
       <Container>
         <GoBackBtn />
         <DetailsWrap>
-          <img src={imageSrc} alt={title} width={360} />
+          <img src={imageSrc} alt={title} width={320} />
           <MovieInfoDetails>
             <MovieTitleDetail>
               {title} ({releaseData})

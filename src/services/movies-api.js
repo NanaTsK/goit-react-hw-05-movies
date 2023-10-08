@@ -35,3 +35,18 @@ export const getMovieByID = async movieId => {
   const { data } = await axios(options);
   return data;
 };
+
+// export async function getCast(id) {
+//   const response = await axios(`/movie/${id}/credits?language=en-US`);
+//   return response.data;
+// }
+
+export const getCast = async movieId => {
+  const options = {
+    method: 'GET',
+    url: `${BASE_URL}/movie/${movieId}/credits?language=en-US`,
+    headers: HEADERS,
+  };
+  const { data } = await axios(options);
+  return data;
+};
