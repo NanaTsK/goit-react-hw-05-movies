@@ -50,3 +50,19 @@ export const getCast = async movieId => {
   const { data } = await axios(options);
   return data;
 };
+
+// export async function getReviews(id) {
+//   const response = await axios(`/movie/${id}/reviews?language=en-US&page=1`);
+//   return response.data;
+// }
+
+export const getReviews = async movieId => {
+  const options = {
+    method: 'GET',
+    url: `${BASE_URL}/movie/${movieId}/reviews?language=en-US&page=1`,
+    headers: HEADERS,
+  };
+
+  const { data } = await axios(options);
+  return data;
+};

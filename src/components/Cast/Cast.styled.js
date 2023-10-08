@@ -12,3 +12,8 @@ export const Text = styled('p')`
   font-size: 16px;
   margin-bottom: 20px;
 `;
+export const SubTitle = styled('h3')`
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+`;
