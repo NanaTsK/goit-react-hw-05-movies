@@ -3,6 +3,7 @@ import { Container, Section } from 'components/App.styled';
 import defaultImg from 'images/defImg.jpg';
 import {
   DetailsWrap,
+  MovieImage,
   MovieDescription,
   MovieGenres,
   MovieInfoDetails,
@@ -24,7 +25,7 @@ const MovieDetailsSection = ({ details }) => {
       <Container>
         <GoBackBtn />
         <DetailsWrap>
-          <img src={imageSrc} alt={title} width={320} />
+          <MovieImage src={imageSrc} alt={title} width={320} />
           <MovieInfoDetails>
             <MovieTitleDetail>
               {title} ({releaseData})

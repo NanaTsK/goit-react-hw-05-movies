@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 
-export const DetailsWrap = styled('div')({
-  display: 'flex',
-  gap: '40px',
-  color: 'rgba(5, 5, 5, 0.6)',
-});
+export const DetailsWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  color: rgba(5, 5, 5, 0.6);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const MovieImage = styled.img`
+  @media screen and (max-width: 768px) {
+    display: block;
+    margin: 0 auto;
+  }
+`;
 
 export const MovieInfoDetails = styled('div')({
   display: 'flex',
