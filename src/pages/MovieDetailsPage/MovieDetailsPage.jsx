@@ -8,7 +8,6 @@ import MovieDetailsSection from 'components/MovieDetailsSection/MovieDetailsSect
 const AdditionalInfo = lazy(() =>
   import('components/AdditionalInfo/AdditionalInfo')
 );
-// import ErrorMessage from 'components/ErrorMessage';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();

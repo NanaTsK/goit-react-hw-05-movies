@@ -36,11 +36,6 @@ export const getMovieByID = async movieId => {
   return data;
 };
 
-// export async function getCast(id) {
-//   const response = await axios(`/movie/${id}/credits?language=en-US`);
-//   return response.data;
-// }
-
 export const getCast = async movieId => {
   const options = {
     method: 'GET',
@@ -50,11 +45,6 @@ export const getCast = async movieId => {
   const { data } = await axios(options);
   return data;
 };
-
-// export async function getReviews(id) {
-//   const response = await axios(`/movie/${id}/reviews?language=en-US&page=1`);
-//   return response.data;
-// }
 
 export const getReviews = async movieId => {
   const options = {
