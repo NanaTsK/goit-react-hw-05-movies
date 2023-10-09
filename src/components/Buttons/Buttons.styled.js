@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
 
-export const GoBackContainer = styled.div`
-  display: flex;
-  justify-content: center; /* Horizontally center the content */
-  margin-bottom: 20px;
-`;
+export const GoBackContainer = styled('div')({
+  display: 'flex',
+  justifyContent: 'center',
+  marginBottom: '20px',
+});
 
 export const GoBackLink = styled(Link)({
   display: 'flex',
@@ -25,7 +25,7 @@ export const GoBackLink = styled(Link)({
   borderRadius: '8px',
   boxShadow: '0px 0px 2px 1px rgba(0, 0, 0, 0.2)',
 
-  transition: `boxShadow ${transition}, transform ${transition}`,
+  transition: `transform ${transition}`,
 
   '&:hover, &:focus': {
     transform: 'scale(1.05)',

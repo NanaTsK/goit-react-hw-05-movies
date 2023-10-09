@@ -1,8 +1,9 @@
+//
 import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CardActor, Text } from './Cast.styled';
-import { ErrorMessage } from 'components/App.styled';
+import { ActorCard, ActorImage, Text } from './Cast.styled';
+import { ErrorMessage, Container } from 'components/App.styled';
 import { getCast } from 'services/movies-api';
 
 const Cast = () => {
@@ -31,7 +32,7 @@ const Cast = () => {
   }, [castList, movieId]);
 
   return (
-    <>
+    <Container>
       {isLoading && <Loader />}
 
       {isError && !isLoading && (
@@ -43,8 +44,8 @@ const Cast = () => {
       {castList?.length > 0 && (
         <ul>
           {castList.map(({ cast_id, name, character, profile_path }) => (
-            <CardActor key={cast_id}>
-              <img
+            <ActorCard key={cast_id}>
+              <ActorImage
                 src={`https://image.tmdb.org/t/p/w500${profile_path}`}
                 alt={name}
                 width={100}
@@ -53,11 +54,11 @@ const Cast = () => {
                 <Text>{name}</Text>
                 <Text>Character: {character}</Text>
               </div>
-            </CardActor>
+            </ActorCard>
           ))}
         </ul>
       )}
-    </>
+    </Container>
   );
 };
 
