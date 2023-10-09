@@ -2,7 +2,7 @@ import { ErrorMessage } from 'components/App.styled';
 
 // import NotFoundNotification from 'components/ErrorNotification/NotFoundNotification';
 import { Loader } from 'components/Loader/Loader';
-import { SubTitle, Text } from 'components/Cast/Cast.styled';
+import { SubTitle, Text } from './Reviews.styled';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from 'services/movies-api';

@@ -15,12 +15,7 @@ export const ActorImage = styled('img')({
 });
 
 export const Text = styled('p')({
-  fontSize: '16px',
+  color: 'rgba(5, 5, 5, 0.6)',
+  fontSize: '22px',
   marginBottom: '20px',
-});
-
-export const SubTitle = styled('h3')({
-  fontSize: '20px',
-  fontWeight: '600',
-  marginBottom: '8px',
 });
