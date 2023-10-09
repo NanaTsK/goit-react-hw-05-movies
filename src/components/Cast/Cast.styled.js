@@ -14,6 +14,13 @@ export const ActorImage = styled('img')({
   borderRadius: '6px',
 });
 
+export const SubTitle = styled('h3')({
+  color: 'rgba(5, 5, 5, 0.6)',
+  fontSize: '20px',
+  fontWeight: '600',
+  marginBottom: '8px',
+});
+
 export const Text = styled('p')({
   color: 'rgba(5, 5, 5, 0.6)',
   fontSize: '22px',

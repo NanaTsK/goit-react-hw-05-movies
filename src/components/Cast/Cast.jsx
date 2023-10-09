@@ -1,7 +1,7 @@
 import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ActorCard, ActorImage, Text } from './Cast.styled';
+import { ActorCard, ActorImage, SubTitle, Text } from './Cast.styled';
 import { ErrorMessage, Container } from 'components/App.styled';
 import { getCast } from 'services/movies-api';
 import defaultPhoto from 'images/defPho.jpg';
@@ -53,7 +53,7 @@ const Cast = ({ movie }) => {
                 width={100}
               />
               <div>
-                <Text>{name}</Text>
+                <SubTitle>{name}</SubTitle>
                 <Text>Character: {character}</Text>
               </div>
             </ActorCard>
