@@ -5,7 +5,10 @@ const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
 
 export const AdditionalInfoWrap = styled('div')({
   color: '#f1f1f1',
-  boxShadow: '0px 0px 6px 1px rgba(0, 0, 0, 0.2)',
+  borderTop: '2px solid rgba(0, 0, 0, 0.2)',
+  borderBottom: '2px solid rgba(0, 0, 0, 0.2)',
+  paddingTop: '10px',
+  paddingBottom: '10px',
 });
 
 export const AdditionalTitle = styled('h3')({

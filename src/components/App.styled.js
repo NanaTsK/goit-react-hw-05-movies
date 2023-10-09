@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+export const Section = styled('section')({
+  padding: '10px 0',
+});
+
 export const Container = styled('div')({
   maxWidth: '1280px',
   margin: '0 auto',
-  padding: '20px',
+  padding: '0 20px',
 });
 
 export const Heading = styled('h1')({
@@ -13,10 +17,6 @@ export const Heading = styled('h1')({
   letterSpacing: '0.8px',
   marginBottom: '30px',
   color: '#f1f1f1',
-});
-export const Section = styled('section')({
-  // padding: '110px 0 20px',
-  paddingTop: '10px',
 });
 
 export const ErrorMessage = styled('p')({

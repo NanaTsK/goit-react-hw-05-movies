@@ -8,15 +8,15 @@ import {
 
 const AdditionalInfo = () => {
   return (
-    <AdditionalInfoWrap>
-      <Container>
+    <Container>
+      <AdditionalInfoWrap>
         <AdditionalTitle>Additional information</AdditionalTitle>
         <AdditionalNavBox>
           <AdditionalNavLink to="cast">Cast</AdditionalNavLink>
           <AdditionalNavLink to="reviews">Reviews</AdditionalNavLink>
         </AdditionalNavBox>
-      </Container>
-    </AdditionalInfoWrap>
+      </AdditionalInfoWrap>
+    </Container>
   );
 };
 

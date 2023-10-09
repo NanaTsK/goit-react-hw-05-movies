@@ -6,7 +6,7 @@ const transition = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
 export const GoBackContainer = styled.div`
   display: flex;
   justify-content: center; /* Horizontally center the content */
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
 export const GoBackLink = styled(Link)({

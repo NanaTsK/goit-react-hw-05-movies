@@ -101,7 +101,7 @@ button {
 
 .content {
   flex: 1;
-  padding-top: 100px;
+  padding-top: 110px;
 }
 
 .footer {
@@ -139,6 +139,8 @@ background-color: rgba(104, 133, 176, 0.8);
   background-color: whitesmoke;
   background-color: rgb(245, 245, 245);
 }
+
+/* boxShadow: '0px 0px 6px 1px rgba(0, 0, 0, 0.2)' */
 
 /* borderBottom: 2px solid rgba(255, 255, 255, 0.5); */
 /* 
