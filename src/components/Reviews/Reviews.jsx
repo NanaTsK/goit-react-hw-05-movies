@@ -1,8 +1,8 @@
-import { ErrorMessage } from 'components/App.styled';
+import { ErrorMessage, Container } from 'components/App.styled';
 
 // import NotFoundNotification from 'components/ErrorNotification/NotFoundNotification';
 import { Loader } from 'components/Loader/Loader';
-import { SubTitle, Text } from './Reviews.styled';
+import { ReviewsCard, SubTitle, Text } from './Reviews.styled';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from 'services/movies-api';
@@ -34,7 +34,7 @@ const Reviews = () => {
   }, [movieId, reviewsList]);
 
   return (
-    <>
+    <Container>
       {isLoading && <Loader />}
 
       {isError && !isLoading && (
@@ -49,17 +49,17 @@ const Reviews = () => {
         </NotFoundNotification>
       )} */}
 
-      {reviewsList?.length > 0 && !isLoading && !isError && (
+      {reviewsList?.length > 0 && !isLoading && (
         <ul>
           {reviewsList.map(({ id, author, content }) => (
-            <li key={id}>
+            <ReviewsCard key={id}>
               <SubTitle>Author: {author}</SubTitle>
               <Text>{content}</Text>
-            </li>
+            </ReviewsCard>
           ))}
         </ul>
       )}
-    </>
+    </Container>
   );
 };
 
