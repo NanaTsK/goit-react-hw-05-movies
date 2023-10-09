@@ -26,6 +26,13 @@ export const ErrorMessage = styled('p')({
   transform: 'translateX(-50%)',
   textAlign: 'center',
   fontSize: '32px',
+  color: 'rgba(5, 5, 5, 0.6)',
+});
+
+export const NoReviewMessage = styled('p')({
+  fontSize: '28px',
+  color: 'rgba(5, 5, 5, 0.6)',
+  textAlign: 'center',
 });
 
 export const notifyInit = Notify.init({

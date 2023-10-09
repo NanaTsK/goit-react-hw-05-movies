@@ -1,6 +1,9 @@
-import { ErrorMessage, Container } from 'components/App.styled';
+import {
+  Container,
+  ErrorMessage,
+  NoReviewMessage,
+} from 'components/App.styled';
 
-// import NotFoundNotification from 'components/ErrorNotification/NotFoundNotification';
 import { Loader } from 'components/Loader/Loader';
 import { ReviewsCard, SubTitle, Text } from './Reviews.styled';
 import { useEffect, useState } from 'react';
@@ -43,11 +46,11 @@ const Reviews = () => {
         </ErrorMessage>
       )}
 
-      {/* {reviewsList?.length === 0 && !isError && !isLoading && (
-        <NotFoundNotification>
+      {reviewsList?.length === 0 && !isLoading && (
+        <NoReviewMessage>
           We don`t have any reviews for this movie.
-        </NotFoundNotification>
-      )} */}
+        </NoReviewMessage>
+      )}
 
       {reviewsList?.length > 0 && !isLoading && (
         <ul>

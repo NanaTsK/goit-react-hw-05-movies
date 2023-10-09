@@ -16,7 +16,7 @@ export const ActorImage = styled('img')({
 
 export const SubTitle = styled('h3')({
   color: 'rgba(5, 5, 5, 0.6)',
-  fontSize: '20px',
+  fontSize: '22px',
   fontWeight: '600',
   marginBottom: '8px',
 });
